@@ -1,0 +1,455 @@
+ /*Reset CSS*/
+ *{
+    margin:0;
+    padding:0;
+    list-style:none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h3{
+    font-size: 23px;
+}
+h4{
+    font-size: 18px;
+}
+
+Body{
+    background: url("../_img/fundo.jpg") fixed;
+}
+
+#cabecalho{
+    background-color:  rgb(1, 1, 37);
+}
+
+
+#cabecalho #logo img{
+    margin-top: 10px;
+}
+
+#cabecalho #menu nav{
+    margin-top: 50px;
+}
+
+#cabecalho #menu nav ul li{
+    display: inline-block;
+    width: 90px;
+    height: 40px;
+    padding: 5px;
+    background-color: rgb(1, 1, 37);
+    border: 3px solid rgb(1, 1, 37);
+    text-align: center;
+}
+
+#cabecalho #menu nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+#cabecalho #menu nav ul li:hover{
+    border: 3px solid rgb(189, 189, 6);
+}
+
+
+#hamburguer{
+    margin-top: 30px;
+}
+
+#hamburguer a{
+    color: white;
+    font-size:50px;
+}
+
+#menuSm{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 200px;
+    height: 70vh;
+    z-index: 20;
+    transition: all 300ms ease;
+    border-right: 1px solid #cccccc;
+    background-color: rgb(220, 220, 220);
+    text-align: center;
+}
+
+#menuSmhidden{
+    position: absolute;
+    left: -250px;
+    top: 100%;
+    width: 200px;
+    height: 70vh;
+    z-index: 20;
+    transition: all 300ms ease;
+    border-right: 1px solid #cccccc;
+    background-color: rgb(220, 220, 220);
+    text-align: center;
+}
+
+#menuSmhidden li{
+    padding: 20px;
+    border: 1px solid rgb(201, 200, 200);   
+}
+
+#menuSmhidden li a{
+    padding: 20px 70px 20px 40px;
+    color: rgb(1, 1, 37);
+}
+
+#menuSm li{
+    padding: 20px;
+    border: 1px solid rgb(201, 200, 200);   
+}
+
+#menuSm li a{
+    padding: 20px 70px 20px 40px;
+    color: rgb(1, 1, 37);
+}
+
+
+#faixa1{
+    background-color: cadetblue;
+    height: 10px;
+}
+
+#artigos{
+    padding-top: 50px;
+}
+
+#artigos a{
+    text-decoration: none;
+    color: rgb(17, 17, 17);
+}
+
+#artigos a:hover{
+    color: aliceblue;
+}
+
+.ultimos{
+    text-decoration: none;
+    color: rgb(17, 17, 17);
+    max-height: 250px;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ultimos article{
+    border: 3px solid rgba(0, 0, 0, 0);
+    background-color: rgba(255, 228, 196, 0.521);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.ultimos article:hover{
+    border: 3px solid rgb(189, 189, 6);
+    border-radius: 10px;
+}
+
+#mural{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 50px;
+    color: rgb(17, 17, 17);
+    background-color: rgba(255, 228, 196, 0.521);
+    border-radius: 10px;
+}
+
+#rodape #faixa3{
+    height: 70px;
+    background-color:  rgb(1, 1, 37);
+    text-align: center;
+}
+
+#rodape3 #faixa3{
+    height: 70px;
+    background-color:  rgb(1, 1, 37);
+    text-align: center;
+}
+
+#faixa2{
+    background-color: cadetblue;
+    height: 10px; 
+}
+
+#boxlogin{
+    margin: 0 auto;
+}
+
+#rodape_l{
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+}
+
+#rodape_l #faixa3{
+    height: 70px;
+    background-color:  rgb(1, 1, 37);
+    text-align: center;
+}
+
+#boxlogin{
+    margin-top: 10%;
+}
+
+#boxlogin #login{
+    border: 2px solid white;
+    border-radius: 20px;
+    text-align: center;
+    width: 250px;
+    margin: 0 auto;
+}
+#boxlogin #entrar{
+    border-radius: 8px;
+}
+
+#boxlogin #login a{
+    text-decoration: none;
+    color: rgba(180, 186, 192, 0.664);
+}
+
+#usuarioon{
+    border: 2px solid white;
+    border-radius: 20px;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto; 
+}
+
+#usuariooff{
+    visibility: hidden;
+}
+
+#meuform{
+    visibility: hidden;
+}
+
+#meuform2{
+    visibility: hidden;
+}
+
+#edusuario{
+    border: 2px solid white;
+    border-radius: 20px;
+    text-align: center;
+    width: 250px;
+    margin: 0 auto;  
+}
+
+#edusuario2{
+    border: 2px solid white;
+    border-radius: 20px;
+    text-align: center;
+    width: 250px;
+    margin: 0 auto;  
+}
+
+#usuarioon #gerar{
+    border-radius: 8px;
+}
+
+.forms{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.carregando{
+    display: none;
+}
+
+.carregando2{
+    display: none;
+}
+
+
+.carregando3{
+    display: none;
+}
+
+
+#titulo{
+    width: 300px;
+}
+
+.div_Campos{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.anexos{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#textMensagem{
+    resize: none;
+}
+
+#salvar{
+    margin: 0 auto;
+    width: 100px;
+    border-radius: 5px;
+}
+
+#selects{
+    background-color: rgba(255, 228, 196, 0.74);
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+#titulo_Msg{
+    background-color: rgba(255, 228, 196, 0.74);
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+#div_Anexos{
+    background-color: rgba(255, 228, 196, 0.74);
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+#div_in_Anexos{
+    margin: 0 auto;
+}
+
+.selecao select{
+    width: 300px;
+}
+
+#tables_Manager{
+    background-color: rgba(240, 255, 255, 0.192);
+}
+
+#tables_Manager a{
+    text-decoration: none;
+    color: black;
+}
+
+#tables_Manager a:hover{
+    color: darkorange
+}
+
+
+
+/*css para pagina add_no_banco */
+
+#select_tables{
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+
+.left_{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.tabelas{
+    background-color: rgba(255, 228, 196, 0.74);
+    border-radius: 10px;
+    margin-top: 50px;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.tabelas a{
+    text-decoration: none;
+    color: rgb(31, 31, 31);
+}
+
+.tabelas a:hover{
+    color: darkorange;
+}
+
+.tabelas table td{
+    border: 1px solid rgba(31, 31, 31, 0.288);
+    padding: 0px 10px 0px 10px;
+}
+
+.tabelas table{
+    border-spacing: 0px;
+	text-align: center;
+    margin: 0px auto 0px auto;
+}
+
+.all_Img_Anexos{
+    height: 80%;
+    width: 80%;
+    border: 1px solid rgb(126, 124, 124);
+    border-radius: 5px;
+}
+
+.all_Img_Anexos:hover{
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+
+.edit_Anexos{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.janelas_addnb{
+    background-color: rgba(255, 228, 196, 0.74);
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.inputs{
+    margin-left: 15px;
+}
+
+
+#popup_Fecha{
+    position: absolute;
+    width: 340px;
+    Top: 40%;
+    z-index: 999;
+    background-color: rgb(255, 208, 0);
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+}
+
+#popup_Fecha input{
+    margin-left: 3%;
+    text-decoration: none;
+    color: blue;
+}
+
+
+/* mural de recados */
+#enviaMural{
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+#enviaMural textarea{
+    resize: none;
+}
+
+#preenche{
+    margin-top: 30px;
+}
+
+#bt{
+    margin-top: 30px;
+}
+
+#salvaRecado{
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* fim */

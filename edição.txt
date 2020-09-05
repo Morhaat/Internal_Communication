@@ -1,0 +1,204 @@
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("jquery", "1.4.2")
+    </script>
+
+
+
+
+   <script type="text/javascript">
+        $(function(){
+        $('#local').change(function(){
+            if($(this).val() ){
+                $('#tipo').hide();
+                $('.carregando').show();
+                $.getJSON('loadtipo.php?search=', {id_local: $(this).val(), ajax:'true'}, function(j){
+                    var options = '<option value = "">Selecione um tipo</option>';
+                     for(var i = 0; i < j.length; i++){
+                        options += '<option value="' + j[i].IDTIPO + '">' +j[i].TIPO + '</option>';
+                     }
+                     $('#tipo').html(options).show();
+                     $('.carregando').hide();
+                });
+            }
+            else{
+                $('#tipo').html('<option value = "">Selecione um tipo</option>');
+            }
+        });
+        });
+    </script>
+
+
+    $.getJSON("../_js/loadtipo.php", {idtipo: $(this).val()}, function(j, status){
+                    var option = '<option value="">Selecione o tipo</option>';
+                    if (status == "success"){
+                        $.each(j, function(key, val) {
+                            option += '<option value="'+key+'">'+val+'</option>';
+                        });
+                        $('#tipo').html(option).show();
+                        $('.carregando').hide();
+
+                    }else if (status == "timeout"){
+                        alert("Something is wrong with the connection");
+                    }else if (status == "error" || status == "parsererror" ){
+                        alert("An error occured");
+                    }else{
+                        alert("datatosend did not change");
+                    }  
+
+                });
+
+
+
+
+                include_once("conexao.php");
+
+$result_tipo = "SELECT * FROM tbtipos WHERE IDLOCAL = 'REQ001' ORDER BY TIPO";
+$resultado_tipo = mysqli_query($con, $result_tipo);
+
+
+while ($row_tipo = mysql_fetch_array($resultado_tipo)) {
+    $tipo_post = array(
+        'IDTIPO' => $row_tipo['IDTIPO'],
+        'TIPO' => $row_tipo['TIPO'],
+    );
+}
+
+$json_encode = json_encode($tipo_post);
+echo $json_encode;
+
+
+
+
+<?php 
+
+$id_local = $_REQUEST['id_local'];
+
+$servidor = '127.0.0.1:3306';
+$usuario = 'root';
+$senhas = '';
+$banco = 'dbinternalcommunication';
+
+$con=mysqli_connect("$servidor","$usuario","$senhas","$banco");
+// Check connection
+if (mysqli_connect_errno())
+{
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+}
+$sql=("SELECT * FROM tbtipo WHERE IDLOCAL = '$id_local'");
+$result=mysqli_query($con,$sql);
+while($array = mysqli_fetch_array($result)){
+    $tipo_post = array(
+        'IDTIPO' => $row_tipo['IDTIPO'],
+        'TIPO' => $row_tipo['TIPO'],
+    );
+}
+
+$json_encode = json_encode($tipo_post);
+echo $json_encode;
+
+
+?>
+
+
+
+
+
+
+
+
+$.getJSON("../_js/loadtipo.php", function(j, status){
+                        var option = '<option value="">Selecione algum tipo</option>';
+                        $.each(j, function(key, val){
+                            option += '<option value="'+key+'">'+val+'</option>';
+                        });
+                        $('#tipo').html(option).show();
+                        $('.carregando').hide();
+                    });
+
+
+
+
+                                            for (let i = 0; i < j.length; i++) {
+                            option += '<option value="'+j.IDTIPO+'">'+j.TIPO+'</option>';
+                        }
+
+
+
+                            if(! empty($array)){
+        while($array = mysqli_fetch_assoc($result)){
+            $tipo_post[] = array(
+                'IDTIPO' => $array['IDTIPO'],
+                'TIPO' => $array['TIPO'],
+            );
+        }
+    }
+    else{
+        $tipo_post[] = array(
+            'IDTIPO' => '',
+            'TIPO' => 'Nenhum Resultado',
+        );
+    } 
+
+
+
+$sql=("SELECT * FROM tblocais ORDER BY IDLOCAL desc LIMIT 4");
+$result=mysqli_query($con,$sql);
+        if(!empty($array = mysqli_fetch_assoc($result))){
+            $result=mysqli_query($con,$sql);
+            while($array = mysqli_fetch_assoc($result)){
+                echo($array['IDLOCAL']);
+                echo('--');
+            }
+        }
+
+        //o codigo acima seleciona apanas os 4 ultimos registros do banco de dados e exibe na tela;
+
+
+
+                                        <option value="REQ001">Bomboniere</option>
+                                        <option value="REQ002">Bilheteria</option>
+                                        <option value="REQ003">Saguão</option>
+                                        <option value="REQ004">Loby</option>
+                                        <option value="REQ005">Sala1</option>
+                                        <option value="REQ006">Sala2</option>
+                                        <option value="REQ007">Sala3</option>
+                                        <option value="REQ008">Sala4</option>
+                                        <option value="REQ009">Sala5</option>
+                                        <option value="REQ010">Corredor dos fundos</option>
+                                        <option value="REQ011">Depósito Bomboniere</option>
+                                        <option value="REQ012">Depósito Manutenção</option>
+                                        <option value="REQ013">Depósito Sala3</option>
+                                        <option value="REQ014">Sala de óculos</option>
+                                        <option value="REQ015">Sala produtos de limpeza</option>
+                                        <option value="REQ016">Escritório</option>
+                                        <option value="REQ017">Financeiro</option>
+                                        <option value="REQ018">Banheiros Masculino Clientes</option>
+                                        <option value="REQ019">Banheiros Feminino Clientes</option>
+                                        <option value="REQ020">Banheiros Masculino Funcionários</option>
+                                        <option value="REQ021">Banheiros Feminino Funcionários</option>
+                                        <option value="REQ022">Projeção</option>
+
+
+
+
+                                                                echo "
+                        <div class='col-12 col-lg-6 janelas_addnb'>
+                            <h3>Operação efetuada com sucesso!</h3>
+                            <p>Você acabou de realizar a função delete no item:<br>
+                            IDLOCAL: $idlocal;<br>
+                            LOCAL: $local;</p>
+                        </div>";
+                    }
+                    else{
+                        echo "
+                        <div class='col-12 col-lg-6 janelas_addnb'>
+                            <h3>Algo deu errado!</h3>
+                            <p>Você tentou realizar a função delete, mas algo não saiu como o esperado...</p>
+                        </div>";
+                    }
+
+
+
+
+
